@@ -54,6 +54,3 @@ def draw():
     textSize(40)
     textAlign(LEFT)
     text(score, 20, 50)
-    
-    #def mousePressed()
-  # 
