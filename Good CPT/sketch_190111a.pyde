@@ -1,20 +1,28 @@
 enemy_x = 0
 enemy_y = 0
 enemy_sx = 0
-enemy_sy = 10
+enemy_sy = 70
 enemy_sz = 100
 player_sz=100
-bullet_sy=10
 score=1
-
-
-
 text_color = color(96, 150, 186)
+page = 0
 
 def setup():
     size(800, 800)
     
 def draw():
+  background(255, 255, 224)
+  menu()
+  game()
+
+def menu():
+    textSize(64)
+    text("Welcome To The War", 120,250)
+    textAlign(CENTER)
+    fill(255,255,224)
+         
+def game():
     global score
     global enemy_x 
     global enemy_y 
@@ -23,8 +31,7 @@ def draw():
     global enemy_sz
     global player_sz
 
-   
-    background(0, 0, 0)
+
     x_player = mouseX
     y_player = mouseY
     plane = loadImage("plane.png")
