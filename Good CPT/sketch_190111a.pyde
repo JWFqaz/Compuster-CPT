@@ -1,7 +1,7 @@
 enemy_x = 0
 enemy_y = 0
 enemy_sx = 0
-enemy_sy = 70
+enemy_sy = 100
 enemy_sz = 100
 player_sz=100
 score=1
@@ -15,10 +15,10 @@ def draw():
   background(255, 255, 224)
   menu()
   game()
-
+  
 def menu():
     textSize(64)
-    text("Welcome To The War", 120,250)
+    text("Welcome To The Odessy of air fight", 120,250)
     textAlign(CENTER)
     fill(255,255,224)
          
@@ -61,3 +61,9 @@ def game():
     textSize(40)
     textAlign(LEFT)
     text(score, 20, 50)
+    
+def win_or_lose():
+    global score
+    while True:
+     if score<0:
+        break
