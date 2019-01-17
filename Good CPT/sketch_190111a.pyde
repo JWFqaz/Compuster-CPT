@@ -1,6 +1,6 @@
 plane_x = 0
 # plane x
-plane_sz=100
+plane_sz=125
 bullet_x = plane_x+48
 bullet_sz=20
 # bullet x
@@ -15,7 +15,7 @@ enemy_x = 0
 enemy_y = 0
 enemy_sx = 0
 enemy_sy = 10
-enemy_sz = 100
+enemy_sz = 120
 score=0
 text_color = color(96, 150, 186)
 
@@ -33,10 +33,11 @@ def draw():
         textSize(30)
         text("Press [h] to Begin",280,500) 
         
+        
     if page == 1:
         background(40)
         y = 550
-        image(loadImage("plane.jpg"), plane_x, plane_y, plane_sz, plane_sz)
+        image(loadImage("plane.png"), plane_x, plane_y, plane_sz, plane_sz)
         noStroke()
         fill(255)
         if mouse == False:
@@ -46,17 +47,17 @@ def draw():
         if mouse == True:
             plane_x = mouseX - 64
             cursor(CROSS)
+        
     
-    
-        plane_w -= 10
-        image(loadImage("BulletCol1OGApre1.jpg"), bullet_x, plane_w, bullet_sz, bullet_sz)
+        plane_w -= 30
+        image(loadImage("BulletCol1OGApre1.png"), bullet_x, plane_w, bullet_sz, bullet_sz)
     
         if plane_w <= 0:
             plane_w = plane_y+10
             bullet_x = plane_x+48
             # if w != 0, the variable w and z will be isolate.
     
-        enemy=loadImage('oe.jpg')
+        enemy=loadImage('oe.png')
         noStroke()
         image(enemy, enemy_x, enemy_y, enemy_sz, enemy_sz)
         enemy_y += enemy_sy
@@ -101,13 +102,12 @@ def draw():
       
                 else:
                     mouse = False
-      
-    
+            
     
             if key == 'a' or key == 'A' and mouse == False:
-                plane_x -= 10
+                plane_x -= 20
             if key == 'd' or key == 'D' and mouse == False:
-                plane_x += 10
+                plane_x += 20
             if page == 1:
       
                 if plane_x >= 700:
