@@ -14,7 +14,7 @@ score=0
 enemy_x = 0
 enemy_y = 0
 enemy_sx = 0
-enemy_sy = 10
+enemy_sy = 40
 enemy_sz = 120
 score=0
 text_color = color(96, 150, 186)
@@ -30,10 +30,23 @@ def draw():
         background(40)
         textSize(100)
         text("Air Fight",200,300)
+        
         textSize(30)
         text("Press [h] to Begin",280,500) 
         
-        
+        textSize(40)
+        text("Hints: try your best to get 20 scores!",80,600)
+
+    if page ==2:
+        background(40)
+        textSize(60)
+        text("Try again! Never give up!",70,400)
+           
+    if page==3:
+       background(40)
+       textSize(100)
+       text("Well Done!",200,300)   
+          
     if page == 1:
         background(40)
         y = 550
@@ -42,14 +55,15 @@ def draw():
         fill(255)
         if mouse == False:
             noCursor()
-    
+ 
+        
         smooth();
         if mouse == True:
             plane_x = mouseX - 64
             cursor(CROSS)
         
     
-        plane_w -= 30
+        plane_w -= 80
         image(loadImage("BulletCol1OGApre1.png"), bullet_x, plane_w, bullet_sz, bullet_sz)
     
         if plane_w <= 0:
@@ -91,7 +105,13 @@ def draw():
     textSize(40)
     textAlign(LEFT)
     text(score, 20, 50) 
-     
+    
+    if score<0:
+        page=2
+            
+    if score>20:
+        page=3
+        
     if keyPressed:
             if key == 'h' or key == 'H':
                 page = 1
@@ -105,9 +125,14 @@ def draw():
             
     
             if key == 'a' or key == 'A' and mouse == False:
-                plane_x -= 20
+                plane_x -= 60
             if key == 'd' or key == 'D' and mouse == False:
-                plane_x += 20
+                plane_x += 60
+            if key == 'w' or key == 'W' and mouse == False:
+                plane_y -= 20
+            if key == 's' or key == 'S' and mouse == False:
+                plane_y += 20
+                
             if page == 1:
       
                 if plane_x >= 700:
