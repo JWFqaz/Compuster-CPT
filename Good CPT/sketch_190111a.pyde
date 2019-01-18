@@ -14,7 +14,7 @@ score=0
 enemy_x = 0
 enemy_y = 0
 enemy_sx = 0
-enemy_sy = 40
+enemy_sy = 30
 enemy_sz = 120
 score=0
 text_color = color(96, 150, 186)
@@ -35,7 +35,7 @@ def draw():
         text("Press [h] to Begin",280,500) 
         
         textSize(40)
-        text("Hints: try your best to get 20 scores!",80,600)
+        text("Hints: try your best to get 10 scores!",80,600)
 
     if page ==2:
         background(40)
@@ -45,7 +45,7 @@ def draw():
     if page==3:
        background(40)
        textSize(100)
-       text("Well Done!",200,300)   
+       text("WELL DONE!",150,400)   
           
     if page == 1:
         background(40)
@@ -56,14 +56,13 @@ def draw():
         if mouse == False:
             noCursor()
  
-        
         smooth();
         if mouse == True:
             plane_x = mouseX - 64
             cursor(CROSS)
         
     
-        plane_w -= 80
+        plane_w -= 160
         image(loadImage("BulletCol1OGApre1.png"), bullet_x, plane_w, bullet_sz, bullet_sz)
     
         if plane_w <= 0:
@@ -109,7 +108,7 @@ def draw():
     if score<0:
         page=2
             
-    if score>20:
+    if score==10:
         page=3
         
     if keyPressed:
