@@ -7,7 +7,6 @@ bullet_sz=20
 plane_y = 600
 plane_w = plane_y
 page=0
-game = False
 mouse = False
 score=0
 #enmey
@@ -32,15 +31,18 @@ def draw():
         text("Air Fight",200,300)
         
         textSize(30)
-        text("Press [h] to Begin",280,500) 
+        text("Press [l] to Begin",280,500) 
         
         textSize(40)
-        text("Hints: try your best to get 10 scores!",80,600)
+        text("Tips: try your best to get 20 scores!",80,600)
 
     if page ==2:
         background(40)
-        textSize(60)
-        text("Try again! Never give up!",70,400)
+        textSize(200)
+        text("GG!",250,400)
+        
+        textSize(70)
+        text('Try again!',250,600)
            
     if page==3:
        background(40)
@@ -108,11 +110,11 @@ def draw():
     if score<0:
         page=2
             
-    if score==10:
+    if score>=20:
         page=3
         
     if keyPressed:
-            if key == 'h' or key == 'H':
+            if key == 'l' or key == 'L':
                 page = 1
             if key == 'm' or key == 'M':
                 if mouse == False:
