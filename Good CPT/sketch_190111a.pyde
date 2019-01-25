@@ -66,7 +66,8 @@ def draw():
     
         plane_w -= 160
         image(loadImage("BulletCol1OGApre1.png"), bullet_x, plane_w, bullet_sz, bullet_sz)
-    
+        #player
+        
         if plane_w <= 0:
             plane_w = plane_y+10
             bullet_x = plane_x+48
@@ -76,7 +77,7 @@ def draw():
         noStroke()
         image(enemy, enemy_x, enemy_y, enemy_sz, enemy_sz)
         enemy_y += enemy_sy
-    
+        #emeny
         if enemy_y > height:
           enemy_y = 0
           enemy_x = random(5, width)
@@ -91,7 +92,8 @@ def draw():
         score+= 1
         enemy_y = 0
         enemy_x = random(0, width)
-        
+    #determine bullet and emeny
+    
     r_enemy = enemy_sz/2
     r_plane = plane_sz/2
     a = enemy_x - plane_x
@@ -101,6 +103,7 @@ def draw():
         score-= 1
         enemy_y = 0
         enemy_x = random(0, width)
+    #determine plane amd enemy
         
     fill(text_color)
     textSize(40)
