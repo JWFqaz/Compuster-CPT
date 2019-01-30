@@ -159,10 +159,6 @@ def test():
     assert use_for_test(1) == 1,'function error'
     assert use_for_test(10) == 10,'function error'
     assert use_for_test(100) == 100,'function error'
-    assert use_for_test(1000) == 1000,'function error'
-    assert use_for_test(10000) == 10000,'function error'
-    assert use_for_test(100000) == 100000,'function error'
-    assert use_for_test(1000000) == 1000000,'function error'
     print("pass all test")
 
 test()
